@@ -1,9 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import PageContainer from "./Components/PageContainer";
-import BenefitSection from "./Components/Sections/BenefitSection";
-import HeroSection from "./Components/Sections/HeroSection";
 import SiteNav from "./Components/SiteNav";
+import HomePage from "./Pages/HomePage";
 
 function App() {
   return (
@@ -15,12 +13,7 @@ function App() {
             element={
               <>
                 <SiteNav />
-                <div style={{ marginTop: 80 }}>
-                  <HeroSection />
-                  <PageContainer>
-                    <BenefitSection />
-                  </PageContainer>
-                </div>
+                <HomePage />
                 <h2>Landing Page</h2>
               </>
             }

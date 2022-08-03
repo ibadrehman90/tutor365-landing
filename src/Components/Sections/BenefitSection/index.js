@@ -1,38 +1,32 @@
 import React from "react";
 import IndividualBenefitComponent from "../../IndividualBenefitComponent";
 import "./styles.css";
-const BenefitSection = () => {
+
+const BenefitSection = ({ data, heading, primaryHeadingColor, moreData }) => {
   return (
-    <div
-      className="BenefitSection"
-      style={{
-        display: "flex",
-        width: "100%",
-        justifyContent: "space-around",
-        padding: "40px 0px",
-      }}
-    >
-      <IndividualBenefitComponent
-        image={
-          "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/language-school-illustration-25.png"
+    <div className="BenefitSection">
+      {heading && <h2>{heading}</h2>}
+      <div
+        className={
+          moreData
+            ? "BenefitSectionCards MoreBenefitSectionCards"
+            : "BenefitSectionCards"
         }
-        primaryHeading="Live Classes"
-        secondaryText="Our teachers give live lectures that allow students to ask questions and interact with their teachers like in actual classroom."
-      />
-      <IndividualBenefitComponent
-        image={
-          "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/language-school-illustration-25.png"
-        }
-        primaryHeading="Live Classes"
-        secondaryText="Our teachers give live lectures that allow students to ask questions and interact with their teachers like in actual classroom."
-      />
-      <IndividualBenefitComponent
-        image={
-          "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/language-school-illustration-25.png"
-        }
-        primaryHeading="Live Classes"
-        secondaryText="Our teachers give live lectures that allow students to ask questions and interact with their teachers like in actual classroom."
-      />
+      >
+        {data?.map((obj, index) => {
+          return (
+            <IndividualBenefitComponent
+              key={index}
+              image={obj.image}
+              primaryHeading={obj.heading}
+              primaryHeadingColor={primaryHeadingColor}
+              secondaryText={obj.desc}
+              moreData={moreData && moreData}
+              styles={moreData && { border: "none", margin: "10px 0px" }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

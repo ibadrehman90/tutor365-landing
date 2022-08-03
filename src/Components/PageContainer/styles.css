@@ -2,3 +2,9 @@
   width: 85%;
   margin: auto;
 }
+
+@media screen and (max-width: 1200px) {
+  .PageContainer {
+    width: 97%;
+  }
+}
