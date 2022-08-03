@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import SiteNav from "./Components/SiteNav";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <SiteNav />
+                <div style={{ marginTop: 80 }}>
+                  <img
+                    alt="hero"
+                    src="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/pleasant-looking-afro-american-woman-holds-notepads-papers-studies-college-glad-finish-studying-scaled.jpeg"
+                  />
+                </div>
+                <h2>Landing Page</h2>
+              </>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
