@@ -1,0 +1,66 @@
+.HeroSection {
+  position: relative;
+}
+
+.heroSectionBg {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.heroSectionText {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  transform: translate(-25%, -20%);
+  width: 45%;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.HeroSection .heroSectionText .primaryHeading {
+  font-size: 30px;
+  color: #141414;
+}
+
+.HeroSection .heroSectionText .secondaryText {
+  color: #323232;
+}
+
+.heroSecCta {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 15px 25px;
+  border-radius: 10px;
+  outline: none;
+  background-color: #f96623;
+  color: #002147;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .HeroSection .heroSectionText .primaryHeading {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .heroSectionText {
+    width: 75%;
+    top: 30%;
+    left: 30%;
+    transform: translate(-30%, -30%);
+  }
+  .HeroSection .heroSectionText .primaryHeading {
+    font-size: 20px;
+  }
+}

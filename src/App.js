@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import HeroSection from "./Components/Sections/HeroSection";
 import SiteNav from "./Components/SiteNav";
 
 function App() {
@@ -13,11 +14,7 @@ function App() {
               <>
                 <SiteNav />
                 <div style={{ marginTop: 80 }}>
-                  <img
-                    width={"100%"}
-                    alt="hero"
-                    src="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/pleasant-looking-afro-american-woman-holds-notepads-papers-studies-college-glad-finish-studying-scaled.jpeg"
-                  />
+                  <HeroSection />
                 </div>
                 <h2>Landing Page</h2>
               </>
