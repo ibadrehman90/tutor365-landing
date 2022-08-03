@@ -1,0 +1,31 @@
+.IndividualBenefitComponent {
+  display: flex;
+  align-items: flex-start;
+  border-left: 2px dotted rgba(0, 0, 0, 0.18);
+  padding-left: 24px;
+}
+
+.IndividualBenefitComponent:first-child {
+  border-left: 0;
+}
+
+.IndividualBenefitComponent .IndividualBenefitComponentLeftImage {
+  margin-top: 20px;
+}
+
+.IndividualBenefitComponent .IndividualBenefitComponentHeading {
+  padding: 4px 0px;
+  text-align: left;
+  max-width: 150px;
+  margin-left: 20px;
+}
+
+.IndividualBenefitComponent .IndividualBenefitComponentHeading h3 {
+  font-weight: 500;
+}
+
+.IndividualBenefitComponent .IndividualBenefitComponentHeading p {
+  font-size: 14px;
+  color: #6d6d6d;
+  line-height: 1.75em;
+}
