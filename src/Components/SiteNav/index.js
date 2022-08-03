@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import { BsBag } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { CgProfile } from "react-icons/cg";
+
 const SiteNav = () => {
   const [Click, setClick] = useState(false);
   const [Navbar, setNavbar] = useState(false);
@@ -34,8 +37,28 @@ const SiteNav = () => {
               src="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/Tutor-365-Logo-Final-03.png"
             />
           </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            <i>{Click ? "X" : "="}</i>
+          <div
+            className="menu-icon"
+            // style={{ display: "flex", alignItems: "center" }}
+            onClick={handleClick}
+          >
+            <Link to="/cart" className="nav-links" onClick={closeMobileMenu}>
+              <BsBag className="cartIcon" style={{ marginRight: 8 }} />
+            </Link>
+            <button
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "24px",
+                marginLeft: "20px",
+                background: "none",
+                outline: "none",
+                border: "none",
+              }}
+            >
+              <GiHamburgerMenu />
+            </button>
           </div>
           <div className={Click ? "nav-menu active" : "nav-menu"}>
             <div
@@ -61,19 +84,28 @@ const SiteNav = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  to="/cart"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-around",
+                  }}
                 >
-                  <BsBag className="cartIcon" />
-                </Link>
+                  <Link
+                    to="/cart"
+                    className="nav-links"
+                    onClick={closeMobileMenu}
+                  >
+                    <BsBag className="cartIcon" />
+                  </Link>
+                  {
+                    // when user is logged in
+                    // <CgProfile />
+                  }
+                </div>
               </li>
             </div>
             <div className="nav-cta">
-              {/* <Link to={"/cart"} className="navCtaOutlined">
-                <BsBag />
-              </Link> */}
               <a
                 href={"https://www.portal.tutor365.com"}
                 className="navCtaContained"
