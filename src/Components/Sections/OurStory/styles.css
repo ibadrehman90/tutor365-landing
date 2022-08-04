@@ -1,0 +1,41 @@
+.OurStory {
+  background-color: #ffffff;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  box-shadow: 0px 50px 80px 0px rgb(15 19 25 / 10%);
+  padding: 40px 20px;
+}
+
+.OurStory .OurStoryContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.OurStory .OurStoryContainer .textContainer,
+.OurStory .OurStoryContainer .OurStoryVid {
+  margin: 0px auto;
+  width: 47%;
+}
+
+.OurStory .OurStoryContainer .OurStoryVid iframe {
+  width: 100%;
+}
+
+.OurStory .OurStoryNumbers {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 40px 0px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 750px) {
+  .OurStory .OurStoryContainer .textContainer,
+  .OurStory .OurStoryContainer .OurStoryVid {
+    width: 90%;
+  }
+  .OurStory .OurStoryContainer .textContainer {
+    margin-bottom: 20px;
+  }
+}

@@ -50,6 +50,9 @@
 }
 
 @media screen and (max-width: 400px) {
+  .RegisterTodaySection .ctaBtn {
+    width: 100%;
+  }
   .RegisterTodaySection .ctaBtn a {
     width: 100%;
     margin: 15px;

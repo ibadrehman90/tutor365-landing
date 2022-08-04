@@ -3,6 +3,7 @@ import PageContainer from "../../Components/PageContainer";
 import BenefitSection from "../../Components/Sections/BenefitSection";
 import HeroSection from "../../Components/Sections/HeroSection";
 import ImageAndTextCtaSection from "../../Components/Sections/ImageAndTextCtaSection";
+import OurStory from "../../Components/Sections/OurStory";
 import RegisterTodaySection from "../../Components/Sections/RegisterTodaySection";
 
 let secondSectionData = [
@@ -78,6 +79,7 @@ const HomePage = () => {
           description="High-quality education from the comfort of your own home while engaging with instructors and fellow students in real-time. Browse through any module and watch any recorded lecture from the platform."
           reverseLayout
         />
+        <OurStory />
       </PageContainer>
     </div>
   );

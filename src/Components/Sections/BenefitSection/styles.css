@@ -31,3 +31,10 @@
     margin: auto;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .BenefitSectionCards.MoreBenefitSectionCards,
+  .BenefitSectionCards {
+    width: 100% !important;
+  }
+}

@@ -5,7 +5,7 @@ const RegisterTodaySection = () => {
   return (
     <div className="RegisterTodaySection">
       <div className="textContainer">
-        <h2>Register Today!</h2>
+        <h2 style={{ color: "white" }}>Register Today!</h2>
         <p style={{ color: "white" }} className="descriptionText">
           We are filling spaces faster than we anticipated and that's because we
           strive to provide top-notch education while staying affordable. This
