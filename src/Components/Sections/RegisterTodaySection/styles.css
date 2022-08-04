@@ -1,0 +1,57 @@
+.RegisterTodaySection {
+  background-color: #002147;
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin: 100px auto;
+}
+
+.RegisterTodaySection .textContainer {
+  width: 50%;
+  max-width: 75%;
+  text-align: left;
+}
+
+.RegisterTodaySection .textContainer h2 {
+  font-size: 34px;
+}
+
+.RegisterTodaySection .textContainer p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.RegisterTodaySection .ctaBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.RegisterTodaySection .ctaBtn a {
+  margin: 0px 15px;
+}
+
+@media screen and (max-width: 750px) {
+  .RegisterTodaySection {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  .RegisterTodaySection .textContainer {
+    width: 100%;
+    margin: 0px auto 30px auto;
+  }
+  .RegisterTodaySection .ctaBtn {
+    width: max-content;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .RegisterTodaySection .ctaBtn a {
+    width: 100%;
+    margin: 15px;
+  }
+}

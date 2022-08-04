@@ -1,6 +1,6 @@
 .PageContainer {
   width: 85%;
-  margin: auto;
+  margin: 0px auto;
 }
 
 @media screen and (max-width: 1200px) {

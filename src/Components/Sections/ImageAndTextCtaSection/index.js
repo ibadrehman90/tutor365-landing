@@ -12,8 +12,11 @@ const ImageAndTextCtaSection = ({
 }) => {
   return (
     <div
-      style={reverseLayout && { flexDirection: "row-reverse" }}
-      className="ImageAndTextCtaSection"
+      className={
+        reverseLayout
+          ? "ImageAndTextCtaSection reverse"
+          : "ImageAndTextCtaSection"
+      }
     >
       <div className="textContainer">
         <h5>{secondaryHeading}</h5>
@@ -21,8 +24,7 @@ const ImageAndTextCtaSection = ({
         <p className="descriptionText">{description}</p>
         <Link
           to={linkTo}
-          style={reverseLayout && { float: "left" }}
-          className="heroSecCta"
+          className={reverseLayout ? "heroSecCta reverse" : "heroSecCta"}
         >
           {buttonLabel}
         </Link>

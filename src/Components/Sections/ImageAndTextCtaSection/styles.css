@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.ImageAndTextCtaSection.reverse {
+  flex-direction: row-reverse;
+}
+
 .ImageAndTextCtaSection .imageContainer {
   width: 47%;
 }
@@ -43,4 +47,33 @@
   color: #6d6d6d;
   line-height: 1.75em;
   font-weight: 400;
+}
+
+@media screen and (max-width: 750px) {
+  .ImageAndTextCtaSection {
+    flex-direction: column;
+  }
+  .ImageAndTextCtaSection .imageContainer,
+  .ImageAndTextCtaSection .textContainer {
+    width: 75%;
+  }
+  .ImageAndTextCtaSection.reverse {
+    flex-direction: column-reverse;
+  }
+  .heroSecCta.revserse {
+    float: right !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .ImageAndTextCtaSection .textContainer h2 {
+    font-size: 24px;
+  }
+  .ImageAndTextCtaSection .imageContainer {
+    margin: 15px 0px;
+  }
+  .ImageAndTextCtaSection .imageContainer,
+  .ImageAndTextCtaSection .textContainer {
+    width: 90%;
+  }
 }

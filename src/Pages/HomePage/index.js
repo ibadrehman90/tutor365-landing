@@ -3,6 +3,7 @@ import PageContainer from "../../Components/PageContainer";
 import BenefitSection from "../../Components/Sections/BenefitSection";
 import HeroSection from "../../Components/Sections/HeroSection";
 import ImageAndTextCtaSection from "../../Components/Sections/ImageAndTextCtaSection";
+import RegisterTodaySection from "../../Components/Sections/RegisterTodaySection";
 
 let secondSectionData = [
   {
@@ -69,6 +70,7 @@ const HomePage = () => {
           primaryHeading="Immersive Learning Experience"
           description="High-quality education from the comfort of your own home while engaging with instructors and fellow students in real-time. Browse through any module and watch any recorded lecture from the platform."
         />
+        <RegisterTodaySection />
         <ImageAndTextCtaSection
           imageSrc="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/children-holding-piles-books-scaled.jpeg"
           secondaryHeading="LEARN FROM HOME"
