@@ -2,6 +2,8 @@ import React from "react";
 import PageContainer from "../../Components/PageContainer";
 import BenefitSection from "../../Components/Sections/BenefitSection";
 import HeroSection from "../../Components/Sections/HeroSection";
+import ImageAndTextCtaSection from "../../Components/Sections/ImageAndTextCtaSection";
+
 let secondSectionData = [
   {
     image:
@@ -22,7 +24,6 @@ let secondSectionData = [
     desc: "Missed a live lecture? No worries becuase our recorded videos and educational material is available 24/7.",
   },
 ];
-
 let whyChooseUsData = [
   {
     image:
@@ -49,6 +50,7 @@ let whyChooseUsData = [
     desc: "We train and polish students beyond their syllabus. We give them a chance to explore new domains through encouragement and mentorship.",
   },
 ];
+
 const HomePage = () => {
   return (
     <div style={{ marginTop: 80 }}>
@@ -61,6 +63,18 @@ const HomePage = () => {
           data={whyChooseUsData}
           heading="Why Tutor365?"
           moreData={true}
+        />
+        <ImageAndTextCtaSection
+          secondaryHeading="LEARN FROM HOME"
+          primaryHeading="Immersive Learning Experience"
+          description="High-quality education from the comfort of your own home while engaging with instructors and fellow students in real-time. Browse through any module and watch any recorded lecture from the platform."
+        />
+        <ImageAndTextCtaSection
+          imageSrc="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/children-holding-piles-books-scaled.jpeg"
+          secondaryHeading="LEARN FROM HOME"
+          primaryHeading="Immersive Learning Experience"
+          description="High-quality education from the comfort of your own home while engaging with instructors and fellow students in real-time. Browse through any module and watch any recorded lecture from the platform."
+          reverseLayout
         />
       </PageContainer>
     </div>

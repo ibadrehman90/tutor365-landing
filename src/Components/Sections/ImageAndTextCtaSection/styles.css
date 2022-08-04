@@ -1,0 +1,46 @@
+.ImageAndTextCtaSection {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 70px 0px;
+  align-items: center;
+}
+
+.ImageAndTextCtaSection .imageContainer {
+  width: 47%;
+}
+
+.ImageAndTextCtaSection .imageContainer img {
+  width: 100%;
+  min-height: 340px;
+  max-height: 500px;
+}
+
+.ImageAndTextCtaSection .textContainer {
+  text-align: left;
+  width: 45%;
+}
+
+.ImageAndTextCtaSection .textContainer h5 {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #f96623;
+  /* #002147 */
+}
+
+.ImageAndTextCtaSection .textContainer h2 {
+  font-size: 38px;
+  color: #002147;
+}
+
+.ImageAndTextCtaSection .textContainer a {
+  margin: 20px 0px;
+  float: right;
+}
+
+.descriptionText {
+  font-size: 14px;
+  color: #6d6d6d;
+  line-height: 1.75em;
+  font-weight: 400;
+}
