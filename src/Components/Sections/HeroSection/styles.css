@@ -21,6 +21,13 @@
   justify-content: flex-start;
 }
 
+.heroSectionText.rightText {
+  top: 25%;
+  right: 0% !important;
+  left: unset !important;
+  transform: translate(-5%, -20%);
+}
+
 .HeroSection .heroSectionText .primaryHeading {
   font-size: 30px;
   color: #141414;
