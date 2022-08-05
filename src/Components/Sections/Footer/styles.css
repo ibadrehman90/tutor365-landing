@@ -1,0 +1,19 @@
+.Footer {
+  display: flex;
+  align-items: center;
+  background-color: #e4e4e4;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px 0px;
+}
+.footerInfo {
+  text-align: left;
+  color: #666;
+  float: left;
+}
+
+@media screen and (max-width: 600px) {
+  .Footer {
+    flex-direction: column;
+  }
+}

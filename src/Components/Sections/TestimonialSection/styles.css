@@ -1,0 +1,11 @@
+.TestimonialSection {
+  margin: 100px auto 50px auto;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .TestimonialSection {
+    width: 90%;
+    margin: 0px auto;
+  }
+}

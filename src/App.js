@@ -14,7 +14,6 @@ function App() {
               <>
                 <SiteNav />
                 <HomePage />
-                <h2>Landing Page</h2>
               </>
             }
           />
