@@ -7,6 +7,7 @@ import ImageAndTextCtaSection from "../../Components/Sections/ImageAndTextCtaSec
 import TestimonialSection from "../../Components/Sections/TestimonialSection";
 import "./styles.css";
 import CheckBoxPng from "../../Assets/checkBox.png";
+import AvailableCourses from "../../Components/Sections/AvailableCourses";
 let whyChooseUsData = [
   {
     image: CheckBoxPng,
@@ -38,7 +39,7 @@ const Courses = () => {
         imageLink="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/df-scaled.jpeg"
       />
       <PageContainer>
-        <div>Courses Bundles</div>
+        <AvailableCourses />
         <BenefitSection
           data={whyChooseUsData}
           heading="What else is included?"
