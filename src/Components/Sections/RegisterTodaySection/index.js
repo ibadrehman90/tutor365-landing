@@ -13,12 +13,17 @@ const RegisterTodaySection = () => {
         </p>
       </div>
       <div className="ctaBtn">
-        <Link to="/" className="heroSecCta">
+        <Link to="/courses" className="heroSecCta">
           All Courses
         </Link>
-        <Link style={{ background: "white" }} to="/" className="heroSecCta">
+        <a
+          href="mailto:someone@example.com"
+          style={{ background: "white" }}
+          to="/"
+          className="heroSecCta"
+        >
           Contact Us
-        </Link>
+        </a>
       </div>
     </div>
   );

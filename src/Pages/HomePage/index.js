@@ -2,7 +2,6 @@ import React from "react";
 import PageContainer from "../../Components/PageContainer";
 import BenefitSection from "../../Components/Sections/BenefitSection";
 import FaqSection from "../../Components/Sections/FaqSection";
-import Footer from "../../Components/Sections/Footer";
 import HeroSection from "../../Components/Sections/HeroSection";
 import ImageAndTextCtaSection from "../../Components/Sections/ImageAndTextCtaSection";
 import OurStory from "../../Components/Sections/OurStory";
@@ -61,7 +60,7 @@ const HomePage = () => {
     <div style={{ marginTop: 80 }}>
       <HeroSection />
       <PageContainer>
-        <div style={{ margin: "30px 0px" }}>
+        <div style={{ margin: "20px 0px" }}>
           <BenefitSection data={secondSectionData} primaryHeadingColor />
         </div>
         <BenefitSection

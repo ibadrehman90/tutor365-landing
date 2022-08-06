@@ -61,9 +61,13 @@ export default function FaqSection() {
           ))}
         </div>
         <div className="askQuestionAndImageBanner">
-          <Link to={"/"} style={{ marginBottom: 20 }} className="heroSecCta">
+          <a
+            href="mailto:someone@example.com"
+            style={{ marginBottom: 20 }}
+            className="heroSecCta"
+          >
             Ask A Question
-          </Link>
+          </a>
           <div className="askQuestionBanner">
             <img
               loading="lazy"

@@ -42,9 +42,9 @@ const SiteNav = () => {
             // style={{ display: "flex", alignItems: "center" }}
             onClick={handleClick}
           >
-            <Link to="/cart" className="nav-links" onClick={closeMobileMenu}>
+            {/* <Link to="/cart" className="nav-links" onClick={closeMobileMenu}>
               <BsBag className="cartIcon" style={{ marginRight: 8 }} />
-            </Link>
+            </Link> */}
             <button
               style={{
                 display: "flex",
@@ -67,7 +67,7 @@ const SiteNav = () => {
             >
               <li className="nav-item">
                 <Link
-                  to="/about"
+                  to="/about-us"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
@@ -91,13 +91,13 @@ const SiteNav = () => {
                     justifyContent: "space-around",
                   }}
                 >
-                  <Link
+                  {/* <Link
                     to="/cart"
                     className="nav-links"
                     onClick={closeMobileMenu}
                   >
                     <BsBag className="cartIcon" />
-                  </Link>
+                  </Link> */}
                   {
                     // when user is logged in
                     // <CgProfile />
