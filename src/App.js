@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Footer from "./Components/Sections/Footer";
 import SiteNav from "./Components/SiteNav";
+import AboutUs from "./Pages/AboutUs";
 import Courses from "./Pages/Courses";
 import HomePage from "./Pages/HomePage";
 
@@ -15,6 +17,7 @@ function App() {
               <>
                 <SiteNav />
                 <HomePage />
+                <Footer />
               </>
             }
           />
@@ -24,6 +27,17 @@ function App() {
               <>
                 <SiteNav />
                 <Courses />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/about-us"
+            element={
+              <>
+                <SiteNav />
+                <AboutUs />
+                <Footer />
               </>
             }
           />

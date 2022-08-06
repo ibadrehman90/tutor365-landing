@@ -22,12 +22,14 @@ const ImageAndTextCtaSection = ({
         <h5>{secondaryHeading}</h5>
         <h2>{primaryHeading}</h2>
         <p className="descriptionText">{description}</p>
-        <Link
-          to={linkTo}
-          className={reverseLayout ? "heroSecCta reverse" : "heroSecCta"}
-        >
-          {buttonLabel}
-        </Link>
+        {!buttonLabel && (
+          <Link
+            to={linkTo}
+            className={reverseLayout ? "heroSecCta reverse" : "heroSecCta"}
+          >
+            {buttonLabel}
+          </Link>
+        )}
       </div>
       <div className="imageContainer">
         <img width={400} src={imageSrc} alt={primaryHeading} />

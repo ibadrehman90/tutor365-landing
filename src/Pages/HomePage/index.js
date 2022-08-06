@@ -86,7 +86,6 @@ const HomePage = () => {
         <TestimonialSection />
         <FaqSection />
       </PageContainer>
-      <Footer />
     </div>
   );
 };

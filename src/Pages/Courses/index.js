@@ -54,7 +54,6 @@ const Courses = () => {
         />
         <TestimonialSection />
       </PageContainer>
-      <Footer />
     </div>
   );
 };
