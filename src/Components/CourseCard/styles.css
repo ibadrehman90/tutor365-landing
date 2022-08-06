@@ -1,0 +1,112 @@
+.CourseCard {
+  width: 280px;
+  overflow-x: hidden;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  transition: 0.4s ease;
+  border: 0.5px solid #e4e4e4;
+  margin: 10px 0px;
+}
+
+.CourseCard:hover {
+  box-shadow: 1px 19px 80px 0px rgba(8, 10, 14, 0.1);
+}
+
+.CourseCard .CourseCardLevel {
+  width: max-content;
+  padding: 5px 10px;
+  align-self: flex-end;
+  border: 1px solid #002147;
+  color: #002147;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail {
+  margin: 10px 0px;
+  /* width: 100% !important; */
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail:last-child {
+  margin-bottom: 0;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail .subscribeBtn {
+  width: 100% !important;
+  padding: 10px 0px;
+  background-color: #f16422;
+  outline: none;
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  border: 1px solid #f16422;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail ul {
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail ul li:last-child {
+  margin-bottom: 0;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail ul li {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: #5e5e5e;
+  font-weight: 400;
+  margin: 10px 0px;
+  font-size: 13px;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail ul .disabled {
+  filter: grayscale(100%);
+  color: #949494 !important;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail ul li.disabled,
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail ul li.disabled span {
+  color: #949494;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail ul li span {
+  margin-right: 5px;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail h2 {
+  text-align: left;
+  font-size: 22px;
+  color: #002147;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail p {
+  text-align: left;
+  font-size: 15px;
+  color: #7d7d7d;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+.CourseCard .CourseCardDetails .CourseCardIndividualDetail .price {
+  font-size: 26px;
+}
+
+@media screen and (min-width: 1000px) {
+  .CourseCard {
+    margin-right: 40px;
+  }
+  .CourseCard:last-child {
+    margin-right: 0;
+  }
+}
