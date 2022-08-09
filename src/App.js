@@ -7,6 +7,8 @@ import Courses from "./Pages/Courses";
 import HomePage from "./Pages/HomePage";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Cookies from "js-cookie";
+
 const Wrapper = ({ children }) => {
   const location = useLocation();
   useEffect(() => {
@@ -17,6 +19,8 @@ const Wrapper = ({ children }) => {
 
 function App() {
   localStorage.setItem("user", "ezan");
+  // Cookies.set("name", "ezan", { domain: ".tutor365.com" });
+  // Cookies.remove("name", { domain: ".tutor365.com" });
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,10 +31,7 @@ function App() {
               element={
                 <>
                   <SiteNav />
-                  Develop
                   <HomePage />
-                  Develop
-
                   <Footer />
                 </>
               }
