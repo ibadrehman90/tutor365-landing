@@ -27,7 +27,7 @@ const SiteNav = () => {
   };
 
   window.addEventListener("scroll", changeBackground);
-  const isName = Cookies.get("name");
+  const isUser = Cookies.get("user");
   return (
     <>
       <nav className={Navbar ? "navbar active" : "navbar"}>
@@ -111,7 +111,7 @@ const SiteNav = () => {
                 href={"http://portal.tutor365.com:3001/"}
                 className="navCtaContained"
               >
-                {isName ? "Dashboard" : "Signup"}
+                {isUser ? "Dashboard" : "Signup"}
               </a>
             </div>
           </div>
