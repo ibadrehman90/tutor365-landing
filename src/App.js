@@ -16,6 +16,7 @@ const Wrapper = ({ children }) => {
 };
 
 function App() {
+  localStorage.setItem("user", "ezan");
   return (
     <div className="App">
       <BrowserRouter>
