@@ -4,6 +4,7 @@ import "./style.css";
 import { BsBag } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
+import Cookies from "js-cookie";
 
 const SiteNav = () => {
   const [Click, setClick] = useState(false);
@@ -26,7 +27,7 @@ const SiteNav = () => {
   };
 
   window.addEventListener("scroll", changeBackground);
-
+  const isName = Cookies.get("name");
   return (
     <>
       <nav className={Navbar ? "navbar active" : "navbar"}>
@@ -110,7 +111,7 @@ const SiteNav = () => {
                 href={"http://portal.tutor365.com:3001/"}
                 className="navCtaContained"
               >
-                Sign In
+                {isName ? "Dashboard" : "Signup"}
               </a>
             </div>
           </div>
