@@ -27,7 +27,10 @@ function App() {
               element={
                 <>
                   <SiteNav />
+                  Develop
                   <HomePage />
+                  Develop
+
                   <Footer />
                 </>
               }
