@@ -27,7 +27,41 @@ const SiteNav = () => {
   };
 
   window.addEventListener("scroll", changeBackground);
-  const isUser = Cookies.get("user");
+  const [isUser, setUser] = React.useState();
+
+  React.useEffect(() => {
+    const user = Cookies.get("user");
+    if (user) {
+      let result = JSON.parse(user);
+      setUser(result);
+    }
+  }, []);
+
+  function listenCookieChange(callback, interval = 1000) {
+    let lastCookie = document.cookie;
+    setInterval(() => {
+      let cookie = document.cookie;
+      if (cookie !== lastCookie) {
+        try {
+          callback({ oldValue: lastCookie, newValue: cookie });
+        } finally {
+          lastCookie = cookie;
+        }
+      }
+    }, interval);
+  }
+  listenCookieChange(({ oldValue, newValue }) => {
+    const user = Cookies.get("user");
+
+    if (user) {
+      let result = JSON.parse(user);
+
+      setUser(result);
+    } else {
+      setUser(undefined);
+    }
+  }, 1000);
+  console.log(isUser);
   return (
     <>
       <nav className={Navbar ? "navbar active" : "navbar"}>

@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./Components/Sections/Footer";
@@ -21,6 +22,12 @@ function App() {
   localStorage.setItem("user", "ezan");
   // Cookies.set("name", "ezan", { domain: ".tutor365.com" });
   // Cookies.remove("name", { domain: ".tutor365.com" });
+
+  // cookieStore.onchange = (event) => {
+  //   alert("cookie changed");
+  // };
+  // console.log(document.cookie);
+  // console.log(isUser);
   return (
     <div className="App">
       <BrowserRouter>
