@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import { BsBag } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { CgProfile } from "react-icons/cg";
 import Cookies from "js-cookie";
+import { STUDENT_PORTAL_PAGE_URL } from "../../App/api";
 
 const SiteNav = () => {
   const [Click, setClick] = useState(false);
@@ -141,10 +140,7 @@ const SiteNav = () => {
               </li>
             </div>
             <div className="nav-cta">
-              <a
-                href={"http://portal.tutor365.com:3001/"}
-                className="navCtaContained"
-              >
+              <a href={`${STUDENT_PORTAL_PAGE_URL}`} className="navCtaContained">
                 {isUser ? "Dashboard" : "Signup"}
               </a>
             </div>

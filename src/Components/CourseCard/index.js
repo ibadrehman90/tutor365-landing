@@ -3,20 +3,27 @@ import { BiCheck } from "react-icons/bi";
 import "./styles.css";
 
 const CourseCard = ({
-  courseLevel = "Beginner",
+  categories = [],
   courseCardImageUrl = "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/colleagues-learning-together-during-group-study-scaled.jpeg",
   courseTitle = "From Scratch",
   courseDescription = "Course Description",
   coursePrice = "$31.99",
-  courseBenefits = [
-    { benefit: "Benefit", isAvailable: false },
-    { benefit: "Benefit", isAvailable: false },
-    { benefit: "Benefit", isAvailable: true },
-  ],
 }) => {
+  //   {
+  //     _id(pin):"63296491dcf1159daddd94ca"
+  // name(pin):"Test Subscription 1"
+  // description(pin):"Testing 1..2..3"
+  // categories(pin):
+  // price(pin):30
+  // __v(pin):0
+  // id(pin):"63296491dcf1159daddd94ca"
+  //   }
   return (
     <div className="CourseCard">
-      <div className="CourseCardLevel">{courseLevel}</div>
+      {categories.length ? (
+        <div className="CourseCardLevel">{categories}</div>
+      ) : null}
+
       <div className="CourseCardIndividualDetail">
         <img
           style={{ width: "100%", alignSelf: "center" }}
@@ -33,14 +40,20 @@ const CourseCard = ({
           <p>{courseDescription}</p>
         </div>
         <div className="CourseCardIndividualDetail">
-          <h2 className="price">{coursePrice}/month</h2>
+          <h2 className="price">{coursePrice}£/month</h2>
         </div>
         <div className="CourseCardIndividualDetail">
-          <button className="subscribeBtn" to={"/"}>
+          <button
+            onClick={(e) => {
+              alert("button clicked");
+            }}
+            className="subscribeBtn"
+            to={"/"}
+          >
             Subscribe
           </button>
         </div>
-        <div className="CourseCardIndividualDetail">
+        {/* <div className="CourseCardIndividualDetail">
           <ul>
             {courseBenefits.map((obj, index) => {
               return (
@@ -56,7 +69,7 @@ const CourseCard = ({
               );
             })}
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );
