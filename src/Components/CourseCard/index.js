@@ -1,6 +1,11 @@
+import { Elements } from "@stripe/react-stripe-js";
+import axios from "axios";
+import Cookies from "js-cookie";
 import React from "react";
 import { BiCheck } from "react-icons/bi";
+import { BASE_URL, STUDENT_PORTAL_PAGE_URL } from "../../App/api";
 import "./styles.css";
+import StripeCheckout from "react-stripe-checkout";
 
 const CourseCard = ({
   categories = [],
@@ -8,22 +13,94 @@ const CourseCard = ({
   courseTitle = "From Scratch",
   courseDescription = "Course Description",
   coursePrice = "$31.99",
+  subscription,
 }) => {
-  //   {
-  //     _id(pin):"63296491dcf1159daddd94ca"
-  // name(pin):"Test Subscription 1"
-  // description(pin):"Testing 1..2..3"
-  // categories(pin):
-  // price(pin):30
-  // __v(pin):0
-  // id(pin):"63296491dcf1159daddd94ca"
-  //   }
+  const [localUserData, setLocalUserData] = React.useState({});
+  React.useEffect(() => {
+    let userData = Cookies.get("user", { domain: ".tutor365.com" });
+    let user;
+    if (userData?.length) {
+      user = JSON.parse(userData);
+      setLocalUserData(user);
+    }
+  }, []);
+
+  function listenCookieChange(callback, interval = 1000) {
+    let lastCookie = document.cookie;
+    setInterval(() => {
+      let cookie = document.cookie;
+      if (cookie !== lastCookie) {
+        try {
+          callback({ oldValue: lastCookie, newValue: cookie });
+        } finally {
+          lastCookie = cookie;
+        }
+      }
+    }, interval);
+  }
+  listenCookieChange(({ oldValue, newValue }) => {
+    const user = Cookies.get("user");
+
+    if (user) {
+      let result = JSON.parse(user);
+
+      setLocalUserData(result);
+    } else {
+      setLocalUserData({});
+    }
+  }, 1000);
+
+  const makePayment = async (token) => {
+    console.log(token);
+
+    const body = {
+      token,
+      subscription,
+      user: localUserData,
+    };
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    console.log(JSON.stringify(token));
+    return fetch(`${BASE_URL}/payment/create`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body),
+    })
+      .then((response) => {
+        console.log("RESPONSE ", response);
+        alert("Payment Successful");
+        window.location.replace(STUDENT_PORTAL_PAGE_URL);
+      })
+      .catch((err) => console.log(err));
+  };
+  console.log("localUserData : ", localUserData);
   return (
     <div className="CourseCard">
-      {categories.length ? (
-        <div className="CourseCardLevel">{categories}</div>
-      ) : null}
-
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          flexWrap: "wrap",
+        }}
+      >
+        {categories.length
+          ? categories?.map((obj, index) => {
+              return (
+                <div
+                  style={{
+                    marginLeft: index + 1 !== categories.length ? "5px" : "0px",
+                    marginRight:
+                      index + 1 !== categories.length ? "5px" : "0px",
+                  }}
+                  className="CourseCardLevel"
+                >
+                  {obj.name}
+                </div>
+              );
+            })
+          : null}
+      </div>
       <div className="CourseCardIndividualDetail">
         <img
           style={{ width: "100%", alignSelf: "center" }}
@@ -43,33 +120,36 @@ const CourseCard = ({
           <h2 className="price">{coursePrice}£/month</h2>
         </div>
         <div className="CourseCardIndividualDetail">
-          <button
-            onClick={(e) => {
-              alert("button clicked");
-            }}
-            className="subscribeBtn"
-            to={"/"}
-          >
-            Subscribe
-          </button>
+          {/* <form action="/create-checkout-session" method="POST">
+            <button type="submit">Checkout</button>
+          </form> */}
+          {localUserData?.email ? (
+            <StripeCheckout
+              stripeKey="pk_test_51LlrDQFPgL0mM7sR4FMxVktMujwKrgAVOqjVsYATVc6leXCDO5TqNZ2DFxtt1yZ4j1Msnk5FySzDQL5lW4rmumfS00f48davd8"
+              token={makePayment}
+              name={`Buy ${courseTitle}`}
+              amount={parseFloat(coursePrice) * 100}
+              currency="GBP"
+              email={localUserData?.email ?? ""}
+              // billingAddress={true}
+              // zipCode={true}
+              // shippingAddress
+              // billingAddress
+            >
+              <button className="subscribeBtn">Subscribe</button>
+            </StripeCheckout>
+          ) : (
+            <button
+              href={STUDENT_PORTAL_PAGE_URL}
+              onClick={(e) => {
+                window.location.replace(STUDENT_PORTAL_PAGE_URL);
+              }}
+              className="subscribeBtn"
+            >
+              Subscribe
+            </button>
+          )}
         </div>
-        {/* <div className="CourseCardIndividualDetail">
-          <ul>
-            {courseBenefits.map((obj, index) => {
-              return (
-                <li key={index} className={!obj.isAvailable && "disabled"}>
-                  <span>
-                    <BiCheck
-                      fontSize={24}
-                      style={{ marginTop: 2, color: "#00de00" }}
-                    />
-                  </span>
-                  {obj.benefit}
-                </li>
-              );
-            })}
-          </ul>
-        </div> */}
       </div>
     </div>
   );

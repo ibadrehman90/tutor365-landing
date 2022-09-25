@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../../App/api";
-import CourseCard from "../../CourseCard";
+import CourseCard from "../../CourseCard/";
 import Loader from "../../Loader";
 import "./styles.css";
 const getRequest = async (api) => {
@@ -87,6 +87,7 @@ const AvailableCourses = () => {
                   courseTitle={obj?.name}
                   courseDescription={obj?.description}
                   coursePrice={obj?.price}
+                  subscription={obj}
                 />
               );
             })
