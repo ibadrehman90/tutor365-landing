@@ -1,7 +1,36 @@
-import React from "react";
-import CourseCard from "../../CourseCard";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { BASE_URL } from "../../../App/api";
+import CourseCard from "../../CourseCard/";
+import Loader from "../../Loader";
 import "./styles.css";
+const getRequest = async (api) => {
+  const res = await axios.request({
+    method: "GET",
+    url: api,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return { status: await res.status, data: await res.data };
+};
 const AvailableCourses = () => {
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  console.log(courses, " : courses");
+  useEffect(() => {
+    (async () => {
+      let getSubscriptions = await getRequest(`${BASE_URL}/subscription/get`);
+      if (getSubscriptions.data.status === "fulfilled") {
+        setCourses(getSubscriptions.data.subscriptions);
+        setLoading(false);
+      } else {
+        setCourses([]);
+        setLoading(false);
+      }
+    })();
+  }, []);
+
   let data = [
     {
       level: "Beginner",
@@ -47,19 +76,29 @@ const AvailableCourses = () => {
     <div className="AvailableCourses">
       <h2>Available Courses</h2>
       <div className="AvailableCoursesList">
-        {data.map((obj, index) => {
-          return (
-            <CourseCard
-              key={index}
-              courseLevel={obj.level}
-              courseCardImageUrl={obj.imageUrl}
-              courseTitle={obj.title}
-              courseDescription={obj.description}
-              coursePrice={obj.price}
-              courseBenefits={obj.benefits}
-            />
-          );
-        })}
+        {!loading ? (
+          courses?.length ? (
+            courses?.map((obj, index) => {
+              return (
+                <CourseCard
+                  key={index}
+                  categories={obj?.categories}
+                  courseCardImageUrl={obj?.imageUrl}
+                  courseTitle={obj?.name}
+                  courseDescription={obj?.description}
+                  coursePrice={obj?.price}
+                  subscription={obj}
+                />
+              );
+            })
+          ) : (
+            <p style={{ color: "#7d7d7d" }}>
+              Sorry no courses available at the moment
+            </p>
+          )
+        ) : (
+          <Loader />
+        )}
       </div>
     </div>
   );
