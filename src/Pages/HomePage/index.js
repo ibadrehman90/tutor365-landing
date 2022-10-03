@@ -55,7 +55,7 @@ let whyChooseUsData = [
   },
 ];
 
-const HomePage = () => {
+const HomePage = ({ isActive, setIsActive }) => {
   return (
     <div style={{ marginTop: 80 }}>
       <HeroSection />

@@ -31,7 +31,7 @@ let whyChooseUsData = [
   },
 ];
 
-const Courses = () => {
+const Courses = ({ isActive, setIsActive }) => {
   return (
     <div style={{ marginTop: 80 }}>
       <HeroSection
@@ -39,7 +39,7 @@ const Courses = () => {
         imageLink="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/df-scaled.jpeg"
       />
       <PageContainer>
-        <AvailableCourses />
+        <AvailableCourses setIsActive={setIsActive} isActive={isActive} />
         <BenefitSection
           data={whyChooseUsData}
           heading="What else is included?"
