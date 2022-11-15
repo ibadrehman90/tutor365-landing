@@ -36,7 +36,7 @@ const Courses = ({ isActive, setIsActive }) => {
     <div style={{ marginTop: 80 }}>
       <HeroSection
         rightText={true}
-        imageLink="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/df-scaled.jpeg"
+        // imageLink="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/df-scaled.jpeg"
       />
       <PageContainer>
         <AvailableCourses setIsActive={setIsActive} isActive={isActive} />

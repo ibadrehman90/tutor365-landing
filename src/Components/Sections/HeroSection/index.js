@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
-const HeroSection = ({
-  rightText,
-  imageLink = "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/pleasant-looking-afro-american-woman-holds-notepads-papers-studies-college-glad-finish-studying-scaled.jpeg",
-}) => {
+import BannerImg from "../../../Assets/banner.jpg";
+const HeroSection = ({ rightText, imageLink = BannerImg }) => {
   return (
     <div className="HeroSection">
       <img className="heroSectionBg" alt="hero" src={imageLink} />
