@@ -8,6 +8,9 @@ import TestimonialSection from "../../Components/Sections/TestimonialSection";
 import "./styles.css";
 import CheckBoxPng from "../../Assets/checkBox.png";
 import AvailableCourses from "../../Components/Sections/AvailableCourses";
+import BannerPhoto from "../../Assets/df.jpeg";
+import SchoolSupplies from "../../Assets/school-supplies-assortment-table.jpeg";
+
 let whyChooseUsData = [
   {
     image: CheckBoxPng,
@@ -34,10 +37,7 @@ let whyChooseUsData = [
 const Courses = ({ isActive, setIsActive }) => {
   return (
     <div style={{ marginTop: 80 }}>
-      <HeroSection
-        rightText={true}
-        // imageLink="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/df-scaled.jpeg"
-      />
+      <HeroSection rightText={true} imageLink={BannerPhoto} />
       <PageContainer>
         <AvailableCourses setIsActive={setIsActive} isActive={isActive} />
         <BenefitSection
@@ -46,7 +46,7 @@ const Courses = ({ isActive, setIsActive }) => {
           moreData={true}
         />
         <ImageAndTextCtaSection
-          imageSrc="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/school-supplies-assortment-table-scaled.jpeg"
+          imageSrc={SchoolSupplies}
           secondaryHeading="LEARN FROM HOME"
           primaryHeading="Online Class Offerings"
           description="Our teachers prepare and deliver highly engaging live lectures to students and give them the opportunity to ask questions and interact with other fellow students."

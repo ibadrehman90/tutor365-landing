@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import BannerPhoto from "../../../Assets/education-concept-student-studying-brainstorming-campus-concept-close-up-students-discussing-their-subject-books-textbooks-selective-focus.jpeg";
 const ImageAndTextCtaSection = ({
-  imageSrc = "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/education-concept-student-studying-brainstorming-campus-concept-close-up-students-discussing-their-subject-books-textbooks-selective-focus-scaled.jpeg",
+  imageSrc = BannerPhoto,
   primaryHeading = "Primary Heading",
   secondaryHeading = "Secondary Heading",
   description = "Description",

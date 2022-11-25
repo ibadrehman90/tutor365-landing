@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import FAQ from "./FAQ";
 import { Link } from "react-router-dom";
-
+import PhotoBanner from "../../../Assets/close-up-portrait-attractive-young-woman-isolated.jpeg";
 export default function FaqSection() {
   const [faqs, setFaqs] = useState([
     {
@@ -74,7 +74,7 @@ export default function FaqSection() {
               width="500"
               height="500"
               alt="ask a question"
-              src="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/close-up-portrait-attractive-young-woman-isolated-scaled.jpeg"
+              src={PhotoBanner}
             />
           </div>
         </div>

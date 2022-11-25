@@ -4,7 +4,7 @@ import "./style.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Cookies from "js-cookie";
 import { STUDENT_PORTAL_PAGE_URL } from "../../App/api";
-
+// import Logo from '../../Assets/'
 const SiteNav = () => {
   const [Click, setClick] = useState(false);
   const [Navbar, setNavbar] = useState(false);
@@ -68,7 +68,7 @@ const SiteNav = () => {
           <Link to="/" className="navbar-logo" onCLick={closeMobileMenu}>
             <img
               alt="Tutor365 Website Logo"
-              src="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/Tutor-365-Logo-Final-03.png"
+              src={""}
             />
           </Link>
           <div

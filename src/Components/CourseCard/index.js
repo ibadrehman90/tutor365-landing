@@ -7,10 +7,10 @@ import { BASE_URL, STUDENT_PORTAL_PAGE_URL } from "../../App/api";
 import "./styles.css";
 import StripeCheckout from "react-stripe-checkout";
 import LoadingOverlay from "react-loading-overlay";
-
+import CourseImage from "../../Assets/gc_maths.webp";
 const CourseCard = ({
   categories = [],
-  courseCardImageUrl = "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/colleagues-learning-together-during-group-study-scaled.jpeg",
+  courseCardImageUrl = CourseImage,
   courseTitle = "From Scratch",
   courseDescription = "Course Description",
   coursePrice = "$31.99",

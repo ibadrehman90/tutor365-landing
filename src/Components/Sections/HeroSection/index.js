@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
-import BannerImg from "../../../Assets/banner.jpg";
+import BannerImg from "../../../Assets/pleasant-looking-afro-american-woman-holds-notepads-papers-studies-college-glad-finish-studying.jpeg";
 const HeroSection = ({ rightText, imageLink = BannerImg }) => {
   return (
     <div className="HeroSection">
-      <img className="heroSectionBg" alt="hero" src={imageLink} />
+      <img
+        loading="lazy"
+        className="heroSectionBg"
+        alt="hero"
+        src={imageLink}
+      />
       <div
         className={rightText ? "heroSectionText rightText" : "heroSectionText"}
       >

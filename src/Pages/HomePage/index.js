@@ -7,49 +7,44 @@ import ImageAndTextCtaSection from "../../Components/Sections/ImageAndTextCtaSec
 import OurStory from "../../Components/Sections/OurStory";
 import RegisterTodaySection from "../../Components/Sections/RegisterTodaySection";
 import TestimonialSection from "../../Components/Sections/TestimonialSection";
+import CheckBoxIcon from "../../Assets/checkBox.png";
+import PhotoBanner from '../../Assets/children-holding-piles-books.jpeg'
 
 let secondSectionData = [
   {
-    image:
-      "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/language-school-illustration-25.png",
+    image: "CheckBoxIcon",
     heading: "Live Classes",
     desc: "Our teachers give live lectures that allow students to ask questions and interact with their teachers like in actual classroom.",
   },
   {
-    image:
-      "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/language-school-04.png",
+    image: "CheckBoxIcon",
     heading: "Affordable Pricing",
     desc: "Affordable yet high-quality education that is around just 10p per hour. Our low prices make education accessible for all.",
   },
   {
-    image:
-      "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/language-school-illustration-17.png",
+    image: "CheckBoxIcon",
     heading: "24/7 Academic Support",
     desc: "Missed a live lecture? No worries becuase our recorded videos and educational material is available 24/7.",
   },
 ];
 let whyChooseUsData = [
   {
-    image:
-      "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/educator-1.png",
+    image: CheckBoxIcon,
     heading: "Highly-qualified Teachers",
     desc: "We strongly believe that the high results require qualified teachers with years of experience in their respective fields.",
   },
   {
-    image:
-      "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/global.png",
+    image: CheckBoxIcon,
     heading: "Globally Accessible",
     desc: "Education shouldn't be restricted to only classrooms. Thus, all our teachers are trained and passionate about giving Live lectures to students across various countries.",
   },
   {
-    image:
-      "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/price.png",
+    image: CheckBoxIcon,
     heading: "Affordability",
     desc: "Education is every child's right and we are striving to omit financial strains from the equation by keeping all our courses extremely affordable.",
   },
   {
-    image:
-      "https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/learner.png",
+    image: CheckBoxIcon,
     heading: "Become a Better Learner",
     desc: "We train and polish students beyond their syllabus. We give them a chance to explore new domains through encouragement and mentorship.",
   },
@@ -75,7 +70,7 @@ const HomePage = ({ isActive, setIsActive }) => {
         />
         <RegisterTodaySection />
         <ImageAndTextCtaSection
-          imageSrc="https://wordpress-774869-2749119.cloudwaysapps.com/wp-content/uploads/2022/05/children-holding-piles-books-scaled.jpeg"
+          imageSrc={PhotoBanner}
           secondaryHeading="LEARN FROM HOME"
           primaryHeading="Immersive Learning Experience"
           description="High-quality education from the comfort of your own home while engaging with instructors and fellow students in real-time. Browse through any module and watch any recorded lecture from the platform."
