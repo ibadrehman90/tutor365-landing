@@ -141,7 +141,7 @@ const SiteNav = () => {
             </div>
             <div className="nav-cta">
               <a href={`${STUDENT_PORTAL_PAGE_URL}`} className="navCtaContained">
-                {isUser ? "Dashboard" : "Signup"}
+                {isUser ? "Dashboard" : "Login"}
               </a>
             </div>
           </div>
